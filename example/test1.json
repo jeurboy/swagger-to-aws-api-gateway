@@ -1,0 +1,154 @@
+{
+    "swagger":"2.0",
+    "info":{
+       "title":"This is my website cool API",
+       "description":"\n *  Example annotation : https:\/\/github.com\/zircote\/swagger-php\/blob\/master\/Examples\/petstore.swagger.io\/controllers\/PetController.php\n *  Example JSON : http:\/\/petstore.swagger.io\/v2\/swagger.json\n *  Example output : http:\/\/editor.swagger.io\/\n *",
+       "termsOfService":"",
+       "version":"1.0.0"
+    },
+    "host":"app_auth_ms.local:8003",
+    "basePath":"\/",
+    "schemes":[
+       "http",
+       "https"
+    ],
+    "paths":{
+       "\/app\/auth":{
+          "get":{
+             "tags":[
+                "Authentication"
+             ],
+             "summary":"Get hello",
+             "produces":[
+                "application\/json"
+             ],
+             "parameters":[
+                {
+                   "name":"app_id",
+                   "in":"query",
+                   "description":"App id",
+                   "required":true,
+                   "type":"array",
+                   "items":{
+                      "type":"string",
+                      "default":"5ac303c976a626489d53b08c",
+                      "enum":[
+                         "5ac303c976a626489d53b08c",
+                         "5afd25373c03d902de50ea72",
+                         "5b1632253c03d93fbf0ef47b",
+                         "5b1632333c03d93fbf0ef47c",
+                         "5b442f536b834e74e2eb7134",
+                         "5b4eab3fa0e7da0e5a2a2d72",
+                         "blockiden_student",
+                         "blockiden_admin"
+                      ]
+                   },
+                   "collectionFormat":"multi"
+                },
+                {
+                   "name":"app_secret",
+                   "in":"query",
+                   "description":"Api secret",
+                   "required":true,
+                   "type":"array",
+                   "items":{
+                      "type":"string",
+                      "default":"5ac304ff76a626489d53b0a0",
+                      "enum":[
+                         "5ac304ff76a626489d53b0a0",
+                         "5afd26bc3c03d902de50ea99",
+                         "5b16326c3c03d93fbf0ef481",
+                         "5b1632713c03d93fbf0ef484",
+                         "5b442f906b834e74e2eb7145",
+                         "5b4eab9ca0e7da0e5a2a2d76",
+                         "03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4",
+                         "5254D17BACAA13F84573E87727B48D0D47CB56EEB2496FA1FF37711B82656469"
+                      ]
+                   },
+                   "collectionFormat":"multi"
+                }
+             ],
+             "responses":{
+                "200":{
+                   "description":"Returns hello message"
+                }
+             }
+          }
+       },
+       "\/healthcheck":{
+          "get":{
+             "tags":[
+                "public:healthcheck"
+             ],
+             "summary":"Get healthcheck",
+             "produces":[
+                "application\/json"
+             ],
+             "responses":{
+                "200":{
+                   "description":"Returns document detail"
+                },
+                "500":{
+                   "description":"Internal server error"
+                }
+             }
+          }
+       },
+       "\/server\/config\/{application_id}":{
+          "get":{
+             "tags":[
+                "System"
+             ],
+             "summary":"Get config",
+             "produces":[
+                "application\/json"
+             ],
+             "parameters":[
+                {
+                   "name":"application_id",
+                   "in":"path",
+                   "required":true,
+                   "type":"string"
+                }
+             ],
+             "responses":{
+                "200":{
+                   "description":"return config"
+                }
+             },
+             "security":[
+                {
+                   "Authorization":[
+
+                   ]
+                }
+             ]
+          }
+       }
+    },
+    "definitions":{
+
+    },
+    "responses":{
+       "200":{
+          "description":"Returns a data inside Token",
+          "type":"string"
+       },
+       "401":{
+          "description":"Token not found or unavailable, Invalid Token"
+       }
+    },
+    "securityDefinitions":{
+       "Authorization":{
+          "type":"apiKey",
+          "name":"Authorization",
+          "in":"header"
+       }
+    },
+    "tags":[
+       {
+          "name":"public:healthcheck",
+          "description":"API for healthcheck"
+       }
+    ]
+ }

@@ -1,0 +1,23 @@
+{
+    "name": "jeurboy/swagger-to-aws-api-gateway",
+    "description": "Class generating swagger json into importable AWS api gateway format.",
+    "authors": [
+      {
+        "name": "Pornprasith Mahasith",
+        "email": "jeurboy@hotmail.com"
+      }
+    ],
+    "require": {
+        "php": "^7.0",
+        "jeurboy/object-field-selector": "0.1.*"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "~6.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jeurboy\\SwaggerToAwsAPIGateway\\": "src/"
+        }
+    }
+}
